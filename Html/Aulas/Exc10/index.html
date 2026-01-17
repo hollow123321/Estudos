@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Imagems Dinamicas</title>
+    <style>
+        body{
+        text-decoration: violet;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 20pt;
+        }  
+    </style>
+</head>
+<body>
+    <h1>Imagems Dinamicas</h1>
+    <p>Tente Diminuir e Aumentar a Tela Para Ver a Diferença De Tamanho Da Imagem Abaixo</p>
+    <picture> <!--Picture Para Uma Categoria De Imagem-->
+        <source media="(max-width: 760px)" srcset="image/paisagem-p.png" type="image/png"> <!--Source media type Para Mudar o Tamnaho Da Imagem Dependendo Do Tamanho Da Tela-->
+        <source media="(max-width: 1250px)" srcset="image/paisagem-m.png" type="image/png">
+        <img src="image/paisagem-g.png" alt="img flequixilllvel">
+    </picture>
+    <h1>Audios em Html</h1>
+    <p>Aqui Algums Audios e Músicas Quem Botei Nesse Cite a Quesito De Teste</p>
+    <audio src="midia/Down The Rabbit Hole - The Grey Room _ Density & Time.mp3" controls autoplay></audio> <!--Tag Audio Para Botar Algum Audio Em Seu Site e Uma Maneira Não Muito Boa De Se Fazer Isso-->
+    <audio controls autoplay preload="metadata"> <!--Preload Para Saber Quando Começar a Tocar e Se Tocar-->
+        <source src="midia/Down The Rabbit Hole - The Grey Room _ Density & Time.mp3" type="audio/mpeg">
+        <p>Desculpa Mas Aparentemente o Audio Não Foi Reproduzido Clique <a href="midia/Down The Rabbit Hole - The Grey Room _ Density & Time.mp3">Aqui</a>Caso Queira Baixar a Música</p>
+    </audio>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>a</title>
+    <style>
+        body{
+            background-color: indigo;
+            color: white;
+            text-align: center;
+            text-decoration: violet;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20pt;
+            }  
+    </style>
+</head>
+<body>
+
+</body>
+</html>

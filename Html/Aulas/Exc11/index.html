@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Tipos De Video</title>
+    <style>
+        body{
+            background-color: indigo;
+            color: white;
+            text-align: center;
+            text-decoration: violet;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20pt;
+            }  
+    </style>
+</head>
+<body>
+    <h1>Inserindo Videos Hospedados Localmente</h1>
+    <video src="media/15053803_1080_2080_30fps.mp4" width="230" controls></video> <!--Tag Video Para Colocar Algum Video No Seu Site Forma Ruim-->
+    <video width="230" controls poster="#"> <!--Forma Recomendavel--> <!--Para Botar Uma Thumb Para o Video-->
+        <source src="media/15053803_1080_2080_30fps.mp4" type="video/mp4">
+        <p>Infelizmente Não Foi Possivel Carregar o Video Clique <a href="media/15053803_1080_2080_30fps.mp4">Aqui</a> Caso Queira Baixar o Video</p>
+    </video> <!--a Forma Local Não é Muito Recomendada Por Consumir Banda Demais-->
+    <h1>Videos Hospedados Não Localmente</h1>
+    <p>Incorporação De Videos</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/OzUnqQk4eOg?si=NGtinxPuPQyB1iGz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>

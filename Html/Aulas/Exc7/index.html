@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negrito e Italico</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+    body{
+        background-color: indigo;
+        color: white;
+        text-align: center;
+        text-decoration: violet;
+        font: helvetica;
+        font-size: 20pt;
+        }
+    mark#marcos{
+        color: pink;
+        background-color: black;
+        border-radius: 16pt;
+        padding: 6pt;
+        }
+    div{
+        background-color: black;width: 100%;border-radius: 20pt;
+        }
+    mark{
+        padding: 5pt; background-color: black; color: white; border-radius: 16pt
+        }
+    abbr{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1><ins>Formatação De Palavras Negrito,Italico e Etc</ins></h1>
+    <hr>
+    <p><b>Negrito Não Semãntico</b></p> <!--<b> Para Negrito Não Semãntico-->
+    <p><Strong>Negrito Semãntico<//Strong></p> <!--<Strong> Para Negrito Semãntico-->
+    <hr>
+    <p><i>Italico Não Semãntico</i></p> <!-- Para Italico Não Semãntico-->
+    <p><em>Italico Semãntico</em></p> <!-- Para Italico Semãntico-->
+    <hr>
+    <p><mark id = marcos>Marcação</mark></p>
+    <p><mark>Tag Style Dentro De uma Tag HTML</mark></p>
+    <hr>
+    <p><small>Letras Pequenas</small></p>
+    <hr>
+    <p><del>Para Riscar Letras/Para Mostrar Que Essa Parte Do Texto é Desconsiderada</del></p>
+    <hr>
+    <p><u>Sublinado Não Semãntico</u></p> <!--Não Semãntico Quase Em Desuso-->
+    <p><ins>Sublinado Semãntico.Para Sublinar Texto/Mostrar Que Ele Foi Adicionado Depois</ins></p> <!--Semãntico em Uso-->
+    <hr>
+    <p>Para Mostrar Por Exemplo Números Elevados Como <ins>X<sup>2</sup> + X<sup>3</ins></sup></p> <!--Tag <sup><sup/>-->
+    <p>Para Mostrar Fórmulas Químicas Como <ins>H<sub>2</sub>o</ins></p> <!--Tag <sub><sub/>-->
+    <hr>
+    <p>Codigo Em Python:</p>
+    <div>
+        <pre> <!--Tag Para Que Tudo que Vc Escrever Apareça do Jeito Que Vc Escreveu-->
+            <code> <!--Tag Code Para Mostrar Um Codigo De Alguma Linguagem Como Python-->
+            #Soma Basica
+            n1 = 10
+            n2 = 20
+            soma = (n1 + n2);
+            print(soma);
+            </code>
+        </pre>
+    </div>
+    <hr>
+    <h1>Citações</h1>
+    <p>Como Diria Guanabara:<q>o Computador é Um Burro Muito Rápido.</q></p> <!--Tag <q> Para Citações Simples/Entre Áspas-->
+    <p>Segundo Bolsonaro a Aids é:</p>
+    <blockquote cite ="link.Link">Um Programa De Reconciliação Infantil.</blockquote> <!--Tag <blockquote> Para Citações Complexas Com Links e Dá Um Espaço Para a Citação-->
+    <hr>
+    <h1>Abreviações</h1>
+    <p>Eu Gosto De Pi..Colé de <abbr title="HyperText Markup Language">HTML</abbr>!!!</p> <!--Tag <abbr> Para Abreviações/Para Dar Significado Para a Abreviação-->
+    <hr>
+    <h1>Texto Invertido</h1>
+    <p><bdo dir="rtl">3 Pratos De Trigo Para 3 Tigres Tristes</bdo></p> <!--Tag <bdo> Para Texto Invertido-->
+</body>
+</html>
