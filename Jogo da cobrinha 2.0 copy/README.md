@@ -1,0 +1,1 @@
+Esse Arquivo Foi Inteiramente Feito Por Ia é Apenas Para Ler Codigo e Testar o Jogo

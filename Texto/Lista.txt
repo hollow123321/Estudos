@@ -1,0 +1,23 @@
+Coisas para fazer
+
+🟢 Nível Iniciante (Pra começar agora)
+Botão "Modo Balada": Um botão que quando clicado, fica trocando a cor do fundo da página aleatoriamente (efeito estrobo).
+Gerador de Frases Aleatórias: Um botão que cada vez que aperta, aparece uma frase engraçada ou um xingamento diferente abaixo do título.
+Relógio Digital: Colocar a hora certa no topo do site que atualiza os segundos em tempo real.
+🟡 Nível Intermediário (Pra quebrar um pouco a cabeça)
+Galeria de GIFs: Organizar seus GIFs (o Yelas e o Astolfo) numa galeria onde você clica numa setinha e troca a imagem, em vez de mostrar todas de uma vez.
+Contador de Cliques: Uma imagem que, cada vez que você clica nela, aumenta um número na tela (estilo "Cookie Clicker").
+Tema Dark/Light: Um interruptor para trocar as cores do site entre claro e escuro.
+🔴 Nível Desafio (Pra virar hacker)
+Pedra, Papel e Tesoura: Jogar contra o computador.
+Formulário de Contato Fake: Uns campos para digitar nome e mensagem que, quando envia, mostra um alerta personalizado na tela.
+Qual dessas você acha mais legal para a gente tentar fazer agora? Eu recomendo o Botão "Modo Balada" ou o Gerador de Frases para começar a brincar com JavaScript!
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                window.alert("Você Pressionou Enter");
+            }
+        });
+
+tudo que pessoa digitar seja separado letra por letra
+por prompt / site de soletração

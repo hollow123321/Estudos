@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap");
+
+/* Reset e Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none; /* Impede seleção de texto acidental */
+}
+
+body {
+  background-color: #050505;
+  color: #fff;
+  font-family: "Rajdhani", sans-serif; /* Fonte futurista */
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  height: 100vh; /* Altura total da tela */
+  overflow: hidden; /* Impede rolagem */
+  background: radial-gradient(
+    circle at center,
+    #1a1a2e 0%,
+    #000000 100%
+  ); /* Fundo gradiente radial */
+}
+
+/* Container Principal do Jogo */
+#game-container {
+  position: relative;
+  box-shadow: 0 0 80px rgba(0, 255, 136, 0.1); /* Brilho verde sutil */
+  border: 1px solid #333;
+  background: #000;
+  display: inline-block;
+  border-radius: 8px; /* Cantos arredondados */
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  /* largura/altura controladas pelo JS */
+}
+
+/* Camada de Interface (HUD) que fica sobre o jogo */
+#ui-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Permite clicar através da UI no jogo (exceto botões) */
+  z-index: 10;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between; /* Espalha placar e ping */
+}
+
+/* Placar de Líderes */
+#score-board {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px); /* Efeito de vidro embaçado */
+  padding: 10px 20px;
+  border-left: 2px solid #00ff88; /* Linha verde neon à esquerda */
+  border-radius: 0 8px 8px 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  height: fit-content;
+  min-width: 150px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Medidor de Ping */
+#ping-meter {
+  color: #00ff88;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  height: fit-content;
+  text-shadow: 0 0 5px #00ff88; /* Brilho neon no texto */
+}
+
+/* --- TELA DE LOBBY (Entrada) --- */
+#lobby-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 5, 5, 0.85); /* Fundo escuro semitransparente */
+  backdrop-filter: blur(12px); /* Desfoque forte do fundo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100; /* Fica acima de tudo */
+  transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Animação suave */
+}
+
+/* Classe utilitária para esconder elementos */
+.hidden {
+  opacity: 0;
+  pointer-events: none; /* Desativa cliques quando invisível */
+}
+
+/* Cartão Central do Lobby */
+.lobby-card {
+  background: rgba(30, 30, 30, 0.6);
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05); /* Sombras complexas */
+  width: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de brilho passando pelo cartão (Animação) */
+.lobby-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  animation: shine 8s infinite linear;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  20% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Título Principal */
+.title {
+  color: #fff;
+  font-size: 42px;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(
+    135deg,
+    #00ff88 0%,
+    #00bcff 100%
+  ); /* Gradiente no texto */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.3));
+}
+
+.input-group {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+/* Campo de Input do Nome */
+#input-nome {
+  flex: 1;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid #333;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 18px;
+  font-family: "Rajdhani", sans-serif;
+  text-align: center;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#input-nome:focus {
+  border-color: #00ff88; /* Borda verde ao focar */
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Seletor de Cores */
+#color-picker {
+  display: flex;
+  flex-direction: column; /* Alinhamento vertical */
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Bolinhas de Cor */
+.color-option {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%; /* Círculo perfeito */
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.color-option:hover {
+  transform: scale(1.2); /* Aumenta ao passar o mouse */
+  z-index: 2;
+}
+
+/* Estado Selecionado da Cor */
+.color-option.selected {
+  border-color: #fff;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px currentColor; /* Brilho da própria cor */
+}
+
+/* Botão Neon Principal */
+.btn-primary {
+  background: transparent;
+  color: #00ff88;
+  width: 100%;
+  padding: 16px;
+  border: 2px solid #00ff88;
+  border-radius: 8px;
+  font-size: 20px;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.1);
+}
+
+/* Efeito de brilho passando no botão */
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 136, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  background: #00ff88;
+  color: #000;
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: scale(0.98); /* Clique pressionado */
+}
+
+.btn-primary:disabled {
+  border-color: #555;
+  color: #555;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Mensagem de Erro */
+#error-message {
+  margin-top: 20px;
+  color: #ff4444;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 68, 68, 0.3);
+  min-height: 24px;
+}

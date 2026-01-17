@@ -1,0 +1,13 @@
+{
+  "name": "snake-multiplayer-optimized",
+  "version": "1.0.0",
+  "description": "High performance multiplayer snake game",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  }
+}

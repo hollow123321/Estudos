@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake Multiplayer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="game-container">
+      <!-- Canvas do Jogo: Onde toda a ação gráfica acontece -->
+      <canvas id="gameCanvas" width="600" height="600"></canvas>
+
+      <!-- Camada de Interface (HUD): Placar, Ping, Botões -->
+      <div id="ui-layer">
+        <div id="score-board"></div>
+        <!-- Onde aparece a lista de jogadores e pontos -->
+        <div id="ping-meter">Ping: <span id="ping">0</span>ms</div>
+
+        <!-- Botão de Mudo -->
+        <button
+          id="btn-mute"
+          style="
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            z-index: 50;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+          "
+        >
+          🔊
+        </button>
+      </div>
+
+      <!-- TELA DE LOBBY (Login) -->
+      <!-- Esta tela cobre o jogo até o usuário entrar. Deve ter z-index alto -->
+      <div id="lobby-screen">
+        <div class="lobby-card">
+          <h1 class="title">SNAKE.IO</h1>
+          <div class="input-group">
+            <div class="input-row">
+              <!-- Campo para digitar o nome -->
+              <input
+                type="text"
+                id="input-nome"
+                placeholder="Seu Nick"
+                maxlength="12"
+                autocomplete="off"
+              />
+              <!-- Seletor de Core -->
+              <div id="color-picker">
+                <!-- As cores DEVEM bater com array defaultColors no server.js -->
+                <div
+                  class="color-option selected"
+                  data-color="#00ff88"
+                  style="background: #00ff88; box-shadow: 0 0 10px #00ff88"
+                  title="Verde Neon"
+                ></div>
+                <div
+                  class="color-option"
+                  data-color="#bc13fe"
+                  style="background: #bc13fe; box-shadow: 0 0 10px #bc13fe"
+                  title="Roxo Neon"
+                ></div>
+                <div
+                  class="color-option"
+                  data-color="#ff0055"
+                  style="background: #ff0055; box-shadow: 0 0 10px #ff0055"
+                  title="Vermelho Neon"
+                ></div>
+                <div
+                  class="color-option"
+                  data-color="#00ccff"
+                  style="background: #00ccff; box-shadow: 0 0 10px #00ccff"
+                  title="Azul Neon"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <!-- Botão para entrar na partida -->
+          <button id="btn-entrar" class="btn-primary">ENTRAR AGORA</button>
+
+          <!-- Área para mensagens de erro ou Game Over -->
+          <p id="error-message"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bibliotecas e Scripts -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Biblioteca do Socket.io -->
+    <script src="soundManager.js"></script>
+    <!-- Gerenciador de Áudio -->
+    <script src="game.js"></script>
+    <!-- Lógica Principal do Cliente -->
+  </body>
+</html>

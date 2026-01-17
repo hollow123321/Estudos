@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eventos Dom</title>
+
+    <link rel="shortcut icon" href='https://cdn.discordapp.com/attachments/1448152524648616008/1449980646775718011/1765772685698.jpg?ex=6946cdf5&is=69457c75&hm=41d36477a4328f30e51709bfb4899fccfe2924beb62a2ba2d28ac6f48f2b8f4c&' type="image/x-icon">
+
+    <style>
+
+    body{
+        background-color: rgb(97, 74, 209);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30pt;
+        color: white;
+        text-align: center;
+        }
+    
+    div#macaco{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20pt;
+        color: white;
+        background-color: black;
+        height: 200px;
+        text-align: center;
+        line-height: 200px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Estudos Do Dom</h1>
+
+    <p>Receba o Resultado</p>
+
+    <div id="macaco"> Oque você ta Fazendo Aqui seu Desperdicio de porra?</div>
+
+<script>
+
+var viado = document.getElementById('macaco')
+
+viado.addEventListener('click', Assédio_Físico)
+viado.addEventListener('mouseover', Assédio_Verbal)
+viado.addEventListener('mouseout', Assédio_Psicológico)
+
+function Assédio_Físico(){
+    viado.innerHTML = 'Ahhhh PARA Desse Jeito e Vou Morrer de Tanto tu Me Molestar'
+    viado.style.background = 'indigo'
+}
+
+function Assédio_Verbal(){
+    viado.innerHTML = 'SAI DE MIM SEU TARADO DE MERDA!'
+    viado.style.background = 'black'
+}
+
+function Assédio_Psicológico(){
+    viado.innerHTML = 'Ahhh esse Puto me deixou finalmente esse pedaço de merda'
+    viado.style.background = 'gray'
+}
+
+</script>
+
+</body>
+
+</html>
