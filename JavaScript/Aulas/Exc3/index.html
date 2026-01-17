@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulação de string</title>
+    <style>
+    body{
+        background-color: rgb(97, 74, 209);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30pt;
+        color: white;
+        text-align: center;
+        }
+    </style>
+</head>
+<body>
+<script>
+    let nome = prompt("Digite seu nome"); //Document.write para Escrever/Valores No Site
+    document.write(`Olá seu <strong>nome</strong> tem ${nome.length} caracteres Forma original: ${nome}<br>`); //``Para Formatação De Texto e Colocação De Variáveis/Placeholders
+    document.write(`seu <strong>nome</strong> em maiusculo é Assim ${nome.toUpperCase()} Forma original: ${nome}<br>`); //toUpperCase() Para Transformar Tudo Em Maiúsculo
+    document.write(`seu <strong>nome</strong> em minusculo é Assim ${nome.toLowerCase()} Forma original: ${nome}<br>`); //toLowerCase() Para Transformar Tudo Em Minúsculo
+</script>
+</body>
+</html>

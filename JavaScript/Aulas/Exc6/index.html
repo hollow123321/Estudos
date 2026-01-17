@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <link rel="shortcut icon" href='https://cdn.discordapp.com/attachments/1448152524648616008/1449980646775718011/1765772685698.jpg?ex=6946cdf5&is=69457c75&hm=41d36477a4328f30e51709bfb4899fccfe2924beb62a2ba2d28ac6f48f2b8f4c&' type="image/x-icon">
+    <style>
+    body{
+        background-color: rgb(97, 74, 209);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30pt;
+        color: white;
+        text-align: center;
+        }
+    div#resultado{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 32px;
+        color: white;
+        background-color: black;
+        text-align: center;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <h1>Somando Números ta ligado?</h1>
+    <input type="number" id="n1" placeholder="Digite um número">
+    <input type="number" id="n2" placeholder="Digite outro número">
+    <button onclick="soma()">Somar</button>
+    <div id="resultado"></div>
+    <script>
+        function soma(){
+            let n1 = document.getElementById('n1').value
+            let n2 = document.getElementById('n2').value
+            let resultado = document.getElementById('resultado')
+            resultado.innerHTML =`<br> O Resultado de ${n1} + ${n2} é : ${Number(n1) + Number(n2)}`
+        }
+    </script>
+</body>
+</html>
