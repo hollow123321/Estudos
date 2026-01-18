@@ -10,11 +10,9 @@ body {
     text-align: center;
     font-size: 25px;
 }
-
 h1 {
  color: white;
 }
-
 button#agroboy {
     cursor: pointer;
     font-size: 20px;
@@ -23,7 +21,6 @@ button#agroboy {
     border-radius: 10px;
     padding: 20px;
 }
-
 p#p1 {
     background-color: lightgray;
     color: black;
