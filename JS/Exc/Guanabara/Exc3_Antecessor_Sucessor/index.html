@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Antecessor e Sucessor</title>
+    <style>
+        body{
+            background-color: indigo;
+            color: white;
+            text-align: center;
+            text-decoration: violet;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20pt;
+            }
+        button#Leo_Amassa_Veia{
+            background-color: white;
+            color: black;
+            text-align: center;
+            text-decoration: violet;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20pt;
+            border-radius: 10px;
+            width: 250px;
+            top: auto;
+            margin: 25px;
+            padding: 10px;
+            }
+    </style>
+</head>
+<body>
+    <h1>Antecessor e Sucessor</h1>
+    <p>Clique No Botão Abaixo Para Ver o Antecessor e o Sucessor Do Número Inteiro Que Digitar</p>
+    <button id="Leo_Amassa_Veia">Númeral</button>
+    <script>
+        let Leo_Amassa_Veia = document.getElementById("Leo_Amassa_Veia")
+        Leo_Amassa_Veia.addEventListener("click", function() {
+            let numero = parseInt(prompt("Digite um número Inteiro Meno"))
+            let antecessor = numero - 1
+            let sucessor = numero + 1
+            alert("O antecessor de " + numero + " é " + antecessor + " e o sucessor é " + sucessor)
+        })
+    </script>
+</body>
+</html>

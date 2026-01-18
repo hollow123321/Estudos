@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Calculadora De Troco</title>
+    <style>
+        body{
+            background-color: indigo;
+            color: white;
+            text-align: center;
+            text-decoration: violet;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20pt;
+            }
+        button#Valor{
+            background-color: white;
+            color: black;
+            text-align: center;
+            text-decoration: violet;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20pt;
+            border-radius: 10px;
+            margin: 10px;
+            top: 10px;
+            padding: 10px;
+            cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+    <h1>Calculadora De Troco</h1>
+    <p>Clique No Botão Abaixo Para Adicionar Um Valor e Calcular o Troco</p>
+    <button id="Valor">Adicionar Valor</button>
+    <script>
+        document.getElementById("Valor").addEventListener("click", function() {
+            let valor = prompt("Digite o valor do produto");
+            let carteira = prompt("Digite o Quanto Pagou");
+            let resultado = carteira - valor;
+            alert("O troco e de: " + resultado);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> <!--icone Não Funcionando Por Causa Da Imagem-->
+    <title>Botões Com Função</title>
+    <style>
+        body{
+            background-color: indigo;
+            color: white;
+            text-align: center;
+            text-decoration: violet;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20pt;
+            }
+        button{
+            background-color: white;
+            color: black;
+            font-size: 20pt;
+            margin: 20px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Botões Com Função</h1>
+    <p>Clique nos botões para ver a mensagem</p>
+    <button id = "botao1">Botão 1</button>
+    <button id = "botao2">Botão 2</button>
+    <button id = "botao3">Botão 3</button>
+    <script>
+        document.getElementById('botao1').addEventListener('click', function(){
+            alert('Clicou no Botão 1')
+        })
+        document.getElementById('botao2').addEventListener('click', function(){
+            alert('Clicou no Botão 2')
+        })
+        document.getElementById('botao3').addEventListener('click', function(){
+            alert('Clicou no Botão 3')
+        })
+    </script>
+</body>
+</html>

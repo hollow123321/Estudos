@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Conversor De Temperaturas</title>
+    <style>
+        body{
+            background-color: lightblue;
+            color: white;
+            text-align: center;
+            text-decoration: violet;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20pt;
+            }
+        div#Resultado{
+            background-color: gray;
+            color: white;
+            text-align: center;
+            text-decoration: violet;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20pt;
+            margin: 60px;
+            width: 1380px;
+            height: 170px;
+            border-radius: 20px;
+            }
+        button#Converter{
+            background-color: lightgray;
+            color: black;
+            text-align: center;
+            text-decoration: violet;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20pt;
+            height: 50px;
+            width: 200px;
+            border-radius: 10px;
+            }
+    </style>
+</head>
+<body>
+    <h1>Conversor De Temperaturas</h1>
+    <p>Clique No Botão Abaixo e Insira um Valor Em Graus Celsius Para Converter Para Fahrenheit</p>
+    <button id="Converter">Converter</button>
+    <div id="Resultado"></div>
+    <script>
+        document.getElementById("Converter").addEventListener("click", function() {
+            let celsius = prompt("Digite o valor em graus celsius");
+            let fahrenheit = celsius * 9/5 + 32;
+            let kelvin = celsius + 273.15;
+            document.getElementById("Resultado").innerHTML = 
+                "<br>O valor em celsius é de: " + celsius + "°C" + "<br>" +
+                "O valor em fahrenheit é de: " + fahrenheit + "°F" + "<br>" +
+                "O valor em kelvin é de: " + kelvin + "°K" + "<br>";
+        })
+    </script>
+</body>
+</html>

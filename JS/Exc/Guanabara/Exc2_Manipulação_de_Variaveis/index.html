@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exc 1</title>
+    <style>
+        body{
+            background-color: indigo;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20pt;
+            color: white;
+            text-align: center;
+            }
+        button{
+            background-color: white;
+            color: black;
+            font-size: 20pt;
+            margin: 20px;
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Olá Clique Abaixo Para o Registro</h2>
+    <button id="cookination">Registrar</button>
+    <script>
+        document.getElementById("cookination").addEventListener("click", function(){
+            let nome = prompt("Qual é o seu nome?")
+            let idade = prompt(`Olá ${nome}! Qual é a sua idade?`)
+            alert(`Prazer em te conhecer ${nome}! Você Então Você tem ${idade} anos! Que Curioso Seu Tarado De Merda!?`)
+        })
+    </script>
+</body>
+</html>
