@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Conversor De Real Para Dolar</title>
+    <style>
+        body{
+            background-color: lightgreen;
+            color: black;
+            text-align: center;
+            text-decoration: violet;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20pt;
+            }
+        button#Converter{
+            background-color: lightgray;
+            color: black;
+            text-align: center;
+            text-decoration: violet;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20pt;
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        div#Resultado{
+            background-color: lightgray;
+            color: black;
+            text-align: center;
+            text-decoration: violet;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20pt;
+            border-radius: 10px;
+            width: 1480px;
+            margin: 10px;
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor De Real Para Dolar</h1>
+    <p>Clique No Botão Abaixo e Insira um Valor Em Reais Para Converter Para Dolar</p>
+    <button id="Converter">Converter</button>
+    <div id="Resultado"></div>
+    <script>
+        let dolar = prompt("Digite o valor do dolar");
+        document.getElementById("Converter").addEventListener("click", function() {
+            let real = prompt("Digite o valor em reais");
+            let Conversão = real / dolar;
+            document.getElementById("Resultado").innerHTML = 
+                "<br>O valor em reais é de: " + real + "R$" + "<br>" +
+                "O valor em dolar é de: " + Conversão.toFixed(2) + "$" + "<br>";
+        })
+    </script>
+</body>
+</html>

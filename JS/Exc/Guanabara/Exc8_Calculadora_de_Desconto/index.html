@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>calculadora de desconto</title>
+    <style>
+        body{
+            background-color: indigo;
+            color: white;
+            text-align: center;
+            text-decoration: violet;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20pt;
+            }
+        button#calculo{
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: gray;
+            color: white;
+        }
+        p#resultado{
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: gray;
+            color: white;
+            width: 1510px;
+            height: 80px;
+        }  
+    </style>
+</head>
+<body>
+    <h1>Calculadora De Desconto</h1>
+    <p>Clique No Botão Abaixo Para Colocar o Preço Do Produto e Ele Mostrará o Preço Com Desconto de 10%</p>
+    <button id="calculo">Calcular</button>
+    <p id="resultado"></p>
+    <script>
+        document.getElementById("calculo").addEventListener("click", calcular);
+        function calcular(){
+            let nome = prompt("Digite o nome do produto");
+            let preco = parseFloat(prompt("Digite o preço do produto"));
+            let desconto = preco * 10 / 100;
+            let desconto_total = preco - desconto;
+            let resultado = preco - desconto;
+            document.getElementById("resultado").innerHTML = 
+            `O Preço Original Do ${nome} é: R$ ${preco.toFixed (2)} <br>` +
+            `O Desconto de 10% é de: R$ ${desconto.toFixed (2)} <br>` +
+            `O preço do produto ${nome} com 10% de desconto é: R$ ${resultado.toFixed (2)} <br>`;
+        }
+    </script>
+</body>
+</html>
